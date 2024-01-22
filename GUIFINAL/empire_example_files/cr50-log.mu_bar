@@ -1,0 +1,13 @@
+                                        
+ MU_BAR - Average cosine of scattering  
+ =====================================  
+                                        
+ Source ENDF file                       ENDFB.IN                                
+ Output ENDF file                       ENDFB.OUT                               
+                                        
+                                        
+               Processing source file : ENDFB.IN                                
+                          Output file : ENDFB.OUT                               
+                         Material MAT :  2425
+                              ZA.LIS0 : 24050.0
+                                  AWI :     1.0

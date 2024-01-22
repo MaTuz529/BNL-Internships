@@ -1,0 +1,407 @@
+  0.001              ;INCIDENT ENERGY (IN LAB)
+ 50.   24.           ;TARGET  A , Z
+  1    0             ;PROJECTILE A, Z
+7                    ;NUMBER OF NEUTRONS  TO BE EMITTED     ! 7
+3                    ;NUMBER OF PROTONS   TO BE EMITTED     ! 3
+1                    ;NUMBER OF ALPHAS    TO BE EMITTED
+1                    ;NUMBER OF DEUTERONS TO BE EMITTED
+1                    ;NUMBER OF TRITONS   TO BE EMITTED
+1                    ;NUMBER OF He-3      TO BE EMITTED
+0  0. 0.             ; reserved
+*************************************************************************************************************
+@ R Capote,A Trkov,MW Herman,G Nobre,D Brown,BV Carlson,R Arcilla
+@ IAEA/BNL collaboration, PCROSS only, ib15
+*************************************************************************************************************
+IOUT       3.                        !
+NEX      120.                        !Number of points in the outgoing energy grid
+ENDF       2.
+*******************************
+*RECOIL     0.                        !No recoils are calculated. Sizeable speed-up if no ENDF file is required
+RECOIL     1.                        !Recoils are calculated to produce complete ENDF file
+***
+* HAUSER-FESHBACH INPUT              !
+*
+FITLEV     0.                        !FITLEV>0 is recommended for 1st run to compare vs NLD exp.data
+LEVDEN     4.                        !G&C NLD
+HRTW      9.9                        !Width fluctuations considered up to 3 MeV (for neutron induced)
+ETLJ      9.9                        !Tlj coupling used up to 8 MeV
+GSTRFN     4.                        !Default gamma ray strength function (Plujko MLO RIPL-2)
+*
+TUNEPE     4.95
+*
+!MIXGDR     0        24  50
+!WEDNOR    0.1       24  50
+*
+*
+GCROA    7.17829   24  54
+GCROA    6.96411   24  53
+GCROA    7.16117   24  52
+GCROA  6.2404E+0   24   51
+GCROA  5.9785E+0   24   50
+GCROA  6.8463E+0   24   49
+GCROA    6.04214   24   48
+GCROA    7.89240   23  53
+GCROA    6.84072   23  52
+GCROA    7.01051   23  51
+GCROA  6.8384E+0   23   50
+GCROA  7.3642E+0   23   49
+GCROA    7.80328   22  52
+GCROA    7.21983   22  51
+GCROA    6.61857   22  50
+GCROA    7.01812   22  49
+GCROA  7.1869E+0   22   47
+GCROA    7.00076   21  49
+GCROA    7.16293   20  46
+*
+GCROUX  10.06350   24  54
+GCROUX   8.19892   24  53
+GCROUX   6.66234   24  52
+GCROUX 1.0689E+1   24   51
+GCROUX 9.0403E+0   24   50
+GCROUX 6.5700E+0   24   49
+GCROUX   6.41098   24   48
+GCROUX   6.61105   23  53
+GCROUX   6.74929   23  52
+GCROUX   9.01104   23  51
+GCROUX 7.8588E+0   23   50
+GCROUX 1.0179E+1   23   49
+GCROUX   6.83824   22  52
+GCROUX   0.00000   22  51
+GCROUX   8.16066   22  50
+GCROUX   7.97469   22  49
+GCROUX 1.2046E+1   22   47
+GCROUX   0.00000   21  49
+GCROUX   6.88549   20  46
+*
+GCROD    3.26599   24  54
+GCROD    1.64833   24  53
+GCROD    2.65000   24  52
+GCROD    1.68034   24  51
+GCROD  3.4891E+0   24   50
+GCROD  1.3472E+0   24   49
+GCROD    2.79000   24   48
+GCROD    1.27000   23  53
+GCROD    0.00000   23  52
+GCROD    1.68034   23  51
+GCROD    0.00000   23  50
+GCROD    1.54000   23  49
+GCROD    3.00000   22  52
+GCROD    1.68034   22  51
+GCROD    3.39411   22  50
+GCROD    1.71429   22  49
+GCROD    1.75038   22  47
+GCROD    1.30000   21  49
+GCROD    3.37000   20  46
+*
+GCROT    1.52802   24  51
+GCROT    1.42224   24  50
+GCROT    1.25875   24  49
+GCROT    1.27622   24  48
+GCROT    1.26803   23  50
+GCROT    1.43644   23  49
+GCROT    1.61658   22  47
+*
+**************
+*
+* OPTICAL MODEL INPUT                !
+*
+DIRECT     1.                        !CC TLs for the incident channel + DWBA (uncoupled)
+*DIRECT     2.                       !CC TLs for the incident and outgoing channel + DWBA (uncoupled)
+*DIRPOT   2602.                       !OMP for the scattering on collective levels if DIRECT>0 (CC/DWBA)
+DIRPOT   616.                        !OMP for the scattering on collective levels if DIRECT>0 (CC/DWBA)
+**********
+* Prequilibrium models
+*
+HMS        0.                        !Monte Carlo Hybrid (DDHMS)preequilibrium model
+MSD        0.                        !Quantum statistical Multi-Step-Direct model
+MSC        0.                        !Quantum statistical Multi-Step-Compound model
+!WIDEX      0.2
+!GAPP       1.6483
+!GRANGP     5.
+!GAPN       1.6483
+!GRANGN     5.
+!HOMEGA     11.0402
+!!EFIT
+!RESNOR     1.0    1
+!RESNOR     1.0    2
+!RESNOR     1.0    3
+!ALS        1.5
+!!XNI
+!GDIV       13.
+!TORY       4.
+!!EX1
+!!EX2
+!D1FRA      0.8
+!GST        1.
+!STMRO      1.
+*
+PCROSS 1.5749E+0                     !Exciton model MFP parameter
+MAXHOL 0.5000E+0
+PEDISC     1.
+CNANGD    1.0
+*
+*
+*
+*TUNEPE    09.00   ! Better description of datum at ~14 MeV
+!TUNEPE    10.97
+*****************
+*GAMPRN      1.
+*CELRED     0.75
+!TOTRED     0.78
+*****************
+!MIXGDR       0     26   56
+!WEDNOR     0.1   26   56
+!EDDFIG    96.
+!EDDFIG    96.   30   150   1
+*
+!FUSRED   0.80
+CINRED    0.60   2
+*
+TUNE     1.0       22   47
+##### Following parameters added by Kalman on 29-Jan-2020 at 13:40  ######
+GTILNO 9.2597E-1   24   51
+GTILNO 1.0535E+0   24   50
+GTILNO 9.9568E-1   23   50
+GTILNO 1.0006E+0   23   49
+GTILNO 1.0026E+0   22   47
+TUNE   1.6000E+0   24   51
+TUNE   9.9850E-1   24   51    1
+TUNE   9.8601E-1   24   51    2
+TUNE   1.0133E+0   24   51    3
+TUNE   1.0001E+0   24   50
+TUNE   1.1104E+0   24   50    1
+TUNE   1.0419E+0   24   50    2
+TUNE   9.9805E-1   23   50
+TUNE   1.0009E+0   23   50    1
+*
+TUNE   0.80000     24   49    1
+*
+GO
+0.005
+0.01
+0.011
+0.012
+0.013
+0.014
+0.015
+0.016
+0.017
+0.018
+0.02
+0.022
+0.024
+0.026
+0.028
+0.03
+0.035
+0.04
+0.045
+0.05
+0.1
+0.15
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.75
+0.76
+0.77
+0.78
+0.79
+0.8
+0.802
+0.804
+0.806
+0.808
+0.81
+0.815
+0.82
+0.825
+0.83
+0.84
+$CINRED    0.62   2
+0.85
+$CINRED    0.64   2
+0.880
+$CINRED    0.66   2
+0.900
+$CINRED    0.68   2
+0.920
+$CINRED    0.70   2
+0.950
+$CINRED    0.74   2
+1.0
+$CINRED    0.77   2
+1.1
+$CINRED    0.80   2
+1.2
+1.3
+1.4
+1.5
+1.6
+1.7
+1.8
+1.85
+1.86
+1.87
+$CINRED    1.20    3
+1.88
+$CINRED    0.800   2
+1.89
+$CINRED    0.810   2
+1.9
+$CINRED    0.815   2
+1.91
+$CINRED    0.820   2
+1.92
+$CINRED    0.825   2
+1.95
+$CINRED    0.83   2
+1.96
+$CINRED    0.835   2
+1.97
+$CINRED    0.84   2
+1.98
+$CINRED    0.845   2
+1.99
+$CINRED    0.85   2
+2.0
+$CINRED    0.90   2
+2.1
+$CINRED    0.95   2
+2.2
+$CINRED    1.00   2
+2.3
+2.4
+2.55
+2.7
+2.8
+2.85
+2.87
+2.88
+2.89
+2.90
+2.91
+$CINRED    0.68    4
+2.94
+2.97
+$CINRED    0.73    4
+!$FUSRED 1.000
+3.0
+$CINRED    0.76    4
+3.02
+$CINRED    0.78    4
+3.04
+$CINRED    0.83    4
+3.06
+3.08
+$CINRED    0.90    4
+3.1
+$CINRED    0.95    4
+3.12
+$CINRED    1.00    4
+3.14
+3.16
+3.18
+3.2
+$CINRED    1.00    4
+3.25
+$CINRED    1.20    4
+3.3
+3.35
+3.4
+3.45
+3.5
+3.55
+3.6
+3.8
+4.0
+4.15
+4.3
+4.4
+4.5
+4.6
+4.7
+4.8
+5.
+5.2
+5.4
+5.5
+5.7
+6.
+6.3
+6.5
+6.7
+7.
+7.25
+7.5
+8.
+8.5
+9.
+9.5
+10.
+10.5
+11.
+11.25
+11.5
+12.
+12.5
+13.
+13.5
+14.
+14.5
+15.
+16.
+16.5
+18.
+19.
+20.
+21.
+22.
+24.
+26.
+28.
+30.
+32.
+34.
+36.
+38.
+40.
+42.
+44.
+46.
+48.
+50.
+52.
+54.
+56.
+58.
+60.
+65.
+-1.
+70.
+75.
+80.
+85.
+90.
+95.
+100.
+110.
+120.
+130.
+140.
+150.
+-1.
+
+22.
+24.
+26.
+28.
+30.
+35.
+40.
+45.
+50.
+-1.
